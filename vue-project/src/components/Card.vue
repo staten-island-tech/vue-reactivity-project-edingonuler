@@ -10,8 +10,8 @@
 
 defineProps({
   movie: {
-    // title: String,
-    // content: String,
+    title: String,
+    content: String,
     type: Object,
     required: true,
   },
@@ -25,7 +25,8 @@ defineProps({
   margin: 10px;
   border-radius: 8px;
   display: flex;
-  width: 500px;
+  flex-direction: column;
+  justify-content: space-around;
   height: 300px;
   width: 500px;
 }

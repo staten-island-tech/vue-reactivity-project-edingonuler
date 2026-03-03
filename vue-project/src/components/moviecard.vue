@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <h1></h1>
-  </div>
+  <div></div>
+  <!-- <div class="card">
+    <h3>{{ name }}</h3>
+    <p>{{ content }}</p>
+  </div> -->
 </template>
 
 <script setup></script>

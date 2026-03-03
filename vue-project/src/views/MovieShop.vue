@@ -4,16 +4,17 @@
   </div>
 
   <div class="container">
-    <Card v-for="movie in movies" :key="movie.name" />
+    <Card v-for="movie in movies" :key="movie.name" :title="movie.title" :content="movie.content" />
+
     <!-- :title="movie.title" :content="movie.content" -->
   </div>
 </template>
 
 <script setup>
-// import { ref } from 'vue'
+import { ref } from 'vue'
 import Card from '@/components/Card.vue' // Import the Card component
 
-const movies = [
+const movies = ref([
   {
     name: 'The Godfather',
     date: '1972',
@@ -74,7 +75,7 @@ const movies = [
     date: '2006',
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb3Pt9SKVvjHRWXFBFsAxZWdJVkcr5K1kURjAO4JjM2EmPlm5od5Y6woO2Scsi5vH4O2Vzdg&s=10',
   },
-]
+])
 </script>
 
 <style scoped>
