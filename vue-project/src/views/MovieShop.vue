@@ -4,7 +4,7 @@
   </div>
 
   <div class="container">
-    <Card v-for="movie in movies" :key="movie.name" :title="movie.title" :content="movie.content" />
+    <Card v-for="movie in movies" :key="movie.name" :movie="movie" />
 
     <!-- :title="movie.title" :content="movie.content" -->
   </div>

@@ -1,7 +1,9 @@
 <template>
   <div class="card">
-    <h3>{{ name }}</h3>
-    <p>{{ content }}</p>
+    <h3>Movie Name: {{ movie.name }}</h3>
+    <p>Date: {{ movie.date }}</p>
+    <img class="img" :src="movie.img" />
+    <img />
   </div>
 </template>
 
@@ -10,7 +12,7 @@
 
 defineProps({
   movie: {
-    title: String,
+    name: String,
     content: String,
     type: Object,
     required: true,
@@ -27,7 +29,11 @@ defineProps({
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 300px;
+  height: 400px;
   width: 500px;
+}
+.img {
+  height: 200px;
+  width: 200px;
 }
 </style>
