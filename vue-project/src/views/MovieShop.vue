@@ -4,7 +4,9 @@
   </div>
 
   <div class="container">
-    <Card v-for="movie in movies" :key="movie.name" :movie="movie" />
+    <Card v-for="movie in movies" :key="movie.name" :movie="movie">
+      <button class="cart_button">Add To Cart</button>
+    </Card>
 
     <!-- :title="movie.title" :content="movie.content" -->
   </div>
@@ -80,10 +82,29 @@ const movies = ref([
 
 <style scoped>
 .start_text_div {
-  background-color: aliceblue;
+  font-family: 'Momo Signature', cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: aliceblue;
+  /* background-color: aliceblue; */
 }
 .container {
   display: flex;
   flex: 1;
+  display: grid;
+  /* Creates 4 equal-width columns. Adjust gap as needed */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.cart_button {
+  background-color: #3100a2;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
 }
 </style>

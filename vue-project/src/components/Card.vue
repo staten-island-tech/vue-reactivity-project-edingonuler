@@ -1,9 +1,9 @@
 <template>
   <div class="card">
-    <h3>Movie Name: {{ movie.name }}</h3>
-    <p>Date: {{ movie.date }}</p>
+    <h3 style="text-align: center">Movie Name: '{{ movie.name }}'</h3>
+    <p style="text-align: center">Release Date: {{ movie.date }}</p>
     <img class="img" :src="movie.img" />
-    <img />
+    <slot></slot>
   </div>
 </template>
 
@@ -28,12 +28,18 @@ defineProps({
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
-  height: 400px;
-  width: 500px;
+  /* justify-content: center; */
+  height: 480px;
+  width: 300px;
+  background-color: aliceblue;
+  font-family: 'Momo Signature', cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 .img {
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
 }
 </style>
