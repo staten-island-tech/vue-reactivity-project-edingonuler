@@ -5,11 +5,13 @@
 
   <div class="container">
     <Card v-for="movie in movies" :key="movie.name" :movie="movie">
-      <button class="cart_button">Add To Cart</button>
+      <button class="cart_button" @click="cart_button_function()">Add To Cart</button>
     </Card>
 
     <!-- :title="movie.title" :content="movie.content" -->
   </div>
+
+  <div class="cart_container"></div>
 </template>
 
 <script setup>
@@ -78,6 +80,23 @@ const movies = ref([
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb3Pt9SKVvjHRWXFBFsAxZWdJVkcr5K1kURjAO4JjM2EmPlm5od5Y6woO2Scsi5vH4O2Vzdg&s=10',
   },
 ])
+
+// ------------------
+
+function cart_button_function() {
+  const container = document.querySelector('.cart_container')
+
+  container.insertAdjacentHTML(
+    'afterbegin',
+    `<div class="card" data-name="${movies.name}">
+        <h3 style="text-align: center">Movie Name: '${movies.name}' </h3>
+        <p style="text-align: center">Release Date: ${movies.date} </p>
+        <img class="img" :src=${movies.img} />
+     </div>`,
+  )
+}
+
+// ------------------
 </script>
 
 <style scoped>
