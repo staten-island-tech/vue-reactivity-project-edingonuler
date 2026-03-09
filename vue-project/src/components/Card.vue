@@ -2,6 +2,7 @@
   <div class="card">
     <h3 style="text-align: center">Movie Name: '{{ movie.name }}'</h3>
     <p style="text-align: center">Release Date: {{ movie.date }}</p>
+    <p style="text-align: center">Price: {{ movie.price }}</p>
     <img class="img" :src="movie.img" />
     <slot></slot>
   </div>
@@ -14,6 +15,7 @@ defineProps({
   movie: {
     name: String,
     content: String,
+    price: Number,
     type: Object,
     required: true,
   },
@@ -31,8 +33,8 @@ defineProps({
   align-items: center;
   justify-content: space-around;
   /* justify-content: center; */
-  height: 480px;
-  width: 300px;
+  //height: 500px;
+  //width: 300px;
   background-color: aliceblue;
   font-family: 'Momo Signature', cursive;
   font-weight: 400;
@@ -41,5 +43,6 @@ defineProps({
 .img {
   height: 250px;
   width: 250px;
+  margin-bottom: 24px;
 }
 </style>
